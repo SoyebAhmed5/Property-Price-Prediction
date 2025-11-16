@@ -1,0 +1,143 @@
+ /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap'); */
+
+:root {
+  --bg-color: #f3f4f6;
+  --primary-color: #2563eb;
+  --accent-color: #1e40af;
+  --text-color: #333;
+  --card-bg: #fff;
+  --border-radius: 12px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+form {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+label {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.03);
+}
+
+code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+pre {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 15px;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 420px;
+  font-size: 0.9rem;
+  margin: 10px auto;
+}
+
+h3 {
+  margin-top: 30px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+strong {
+  color: var(--accent-color);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 500px) {
+  body {
+    padding: 20px;
+  }
+  form, pre {
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

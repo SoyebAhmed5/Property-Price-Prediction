@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Property Price Prediction</title>
+  </head>
+  <body>
+    <h1>Property Price Prediction</h1>
+    <p>
+      Enter details and get a price prediction (units:<strong
+        >{{ units_label or "lakhs" }}</strong
+      >)
+    </p>
+
+    <form method="post" action="/predict" novalidate>
+      <label for="Area">Area (sq ft)</label>
+      <input
+        id="Area"
+        type="number"
+        name="Area"
+        step="0.01"
+        min="100"
+        required
+        value="{{ (last_input.Area if last_input else '') or ''}}"
+        placeholder="e.g., 1000" />
+      <br />
+
+      <label for="Bedrooms">Bedrooms</label>
+      <input
+        id="Bedrooms"
+        type="number"
+        name="Bedrooms"
+        step="1"
+        min="1"
+        required
+        value="{{ (last_input.Bedrooms if last_input else '') or ''}}"
+        placeholder="e.g., 3" />
+      <br />
+
+      <label for="Age">Age (Years)</label>
+      <input
+        id="Age"
+        type="number"
+        name="Age"
+        step="1"
+        min="0"
+        required
+        value="{{ (last_input.Age if last_input else '') or ''}}"
+        placeholder="e.g., 8" />
+      <br /><br />
+
+      <button type="submit">Predict Price</button>
+      <p>
+        Model features: <code>Area</code>, <code>Bedrooms</code>,
+        <code>Age</code>
+      </p>
+
+      {% if result %}
+      <p>
+        Predicted Price: <strong>{{ result }}</strong> {{ unit_label or "lakhs"}}
+      </p>
+      {% endif %}
+      {% if error %}
+      <p>Oops: {{ error }}</p>
+      {% endif %}
+    </form>
+
+    <h3>JSON API</h3>
+    <p>POST <code>/api/predict</code> with:</p>
+    <pre>
+    {
+        "Area": 1000,
+        "Bedrooms": 3,
+        "Age": 8
+    }
+</pre>
+    <p>Response:</p>
+    <pre>
+    {
+        "prediction":85.12,
+        "unit": "lakhs"    
+    }
+</pre> 
+  </body>
+</html>
