@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_absolute_error
 import joblib
 
 df=pd.read_csv("data/property.csv")
