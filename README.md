@@ -1,6 +1,6 @@
 # Property Price Prediction
 
-Live demo: https://property-price-prediction-34o4.onrender.com
+**Live demo: https://property-price-prediction-34o4.onrender.com**
 
 A small Flask-based project for predicting property prices using a trained machine learning model.
 
@@ -65,23 +65,3 @@ Keep these files in the project root so `app.py` and `predict.py` can load them.
 **Data**
 
 - The sample dataset is at [data/property.csv](data/property.csv). Use it to retrain or extend the dataset.
-
-**Notes & Tips**
-
-- If you retrain, ensure the same preprocessing and feature order are used so the web app and `predict.py` remain compatible.
-- Inspect `train.py` to see how the scaler and `features_name` are generated and saved.
-
-**Contributing**
-
-- Bug reports and improvements are welcome. Open an issue or submit a PR with small, focused changes.
-
-**License & Credits**
-
-- Add a license file if you intend to publish this project publicly. Credits to libraries used in `requirements.txt`.
-
----
-
-If you want, I can also:
-
-- Add example input JSON for `predict.py`.
-- Add a minimal `README` badge or quick screenshots of the UI.
